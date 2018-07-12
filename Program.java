@@ -1,4 +1,4 @@
-package com.sample;
+package com.creditmantri;
 
 
 import java.util.Scanner;
@@ -33,9 +33,9 @@ public class Program {
 
                     break;
                 case "2":
-                    System.out.println("Enter the Car No to Leave Parking");
-                    String licencePlate = input.next();
-                    ps.leaveParking(licencePlate);
+                    System.out.println("Enter the Slot id to Leave Parking");
+                    int id = input.nextInt();
+                    ps.leaveParking(id);
                     break;
                 case "3":
                     ps.display();

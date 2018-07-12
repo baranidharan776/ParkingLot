@@ -1,4 +1,4 @@
-package com.sample;
+package com.creditmantri;
 
 
 public class Car {
@@ -20,8 +20,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "licencePlate='" + licencePlate + '\'' +
-                '}';
+        return "Car " + licencePlate ;
     }
 }

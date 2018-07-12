@@ -1,4 +1,4 @@
-package com.sample;
+package com.creditmantri;
 
 import java.util.*;
 
@@ -59,21 +59,37 @@ public class ParkingSpace {
                break;
             }
         }
-        System.out.println(parkingSlot.getParkingSlot().size() + " Size");
         parkingSlot.setParkingSlot(slotList);
         parkingSlot.setAvailableSlot(parkingSlot.getAvailableSlot()-1);
         parkingSlot.setFilledSlot(parkingSlot.getFilledSlot()+1);
         checkStatus();
     }
 
-    public void leaveParking(String licencePlate) {
+    public void leaveParking(int slotId) {
+        List<Slot> slotList = parkingSlot.getParkingSlot();
+        for (Slot slot:slotList
+                ) {
+            if(slot.getStatus() && slot.getId() == slotId){
+                slot.setStatus(false);
+                slot.setCar(null);
+                break;
+            }
+        }
+        parkingSlot.setParkingSlot(slotList);
+        parkingSlot.setAvailableSlot(parkingSlot.getAvailableSlot()+1);
+        parkingSlot.setFilledSlot(parkingSlot.getFilledSlot()-1);
+        checkStatus();
     }
 
     public void display() {
-        for (Slot slot:parkingSlot.getParkingSlot()
-             ) {
-            if(slot.getStatus()){
-                System.out.println("Slot No : "+ slot.getId() + " Car No : "+slot.getCar());
+        if(parkingSlot.getAvailableSlot() == parkingSlot.getTotalSlot()){
+
+        }else {
+            for (Slot slot : parkingSlot.getParkingSlot()
+                    ) {
+                if (slot.getStatus()) {
+                    System.out.println("Slot No : " + slot.getId() + " Car No : " + slot.getCar());
+                }
             }
         }
     }
