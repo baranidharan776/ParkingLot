@@ -1,8 +1,6 @@
 package com.sample;
 
-/**
- * Created by gbs04325 on 12/07/2018.
- */
+
 public class Slot {
     private Integer id;
     private Boolean status;

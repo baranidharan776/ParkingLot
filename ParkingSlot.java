@@ -3,23 +3,13 @@ package com.sample;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by gbs04325 on 12/07/2018.
- */
+
 public class ParkingSlot {
     private List<Slot> parkingSlot;
     private Integer filledSlot ;
     private Integer availableSlot ;
     private Integer totalSlot;
 
-    void generateList(){
-        parkingSlot = new ArrayList<>();
-        for(int i=0;i<getTotalSlot();i++){
-            Slot slot = new Slot();
-            slot.setId(i+1);
-            slot.setStatus(false);
-        }
-    }
 
     public Integer getFilledSlot() {
         return filledSlot;

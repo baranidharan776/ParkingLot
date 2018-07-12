@@ -2,9 +2,7 @@ package com.sample;
 
 import java.util.*;
 
-/**
- * Created by gbs04325 on 12/07/2018.
- */
+
 public class ParkingSpace {
 
     private ParkingSlot parkingSlot;
@@ -14,8 +12,19 @@ public class ParkingSpace {
         parkingSlot.setAvailableSlot(count);
         parkingSlot.setTotalSlot(count);
         parkingSlot.setFilledSlot(0);
-        parkingSlot.generateList();
+        generateList();
         System.out.println("Parking is Initialized Successfully");
+    }
+
+    private void generateList() {
+        List<Slot> slotList = new ArrayList<>();
+        for(int i=0;i<parkingSlot.getTotalSlot();i++){
+            Slot slot = new Slot();
+            slot.setId(i+1);
+            slot.setStatus(false);
+            slotList.add(slot);
+        }
+        parkingSlot.setParkingSlot(slotList);
     }
 
     public void checkStatus(){
